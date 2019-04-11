@@ -1,0 +1,31 @@
+{% extends "comman.html" %}
+{% load static %}
+
+{% block title %}
+
+ticket
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="page-header error-page header-filter" style="background-image: url('{% static 'img/gndu1.jpg' %}')">
+    <!--   you can change the color of the filter page using: data-color="blue | green | orange | red | purple" -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="title">You already registered ! </h1>
+		
+		<div class="tim-note">
+              <h2>
+              Your Registrstion Number : #WITTY_ {{ id }}</h2>
+            </div>
+            
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

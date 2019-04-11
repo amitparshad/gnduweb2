@@ -1,0 +1,128 @@
+{% extends 'comman.html' %}
+
+{% load static %}
+
+
+{% block content %}
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+  <form method="post" action="">
+{% csrf_token %}
+
+<table border="1" align="center" width="400" bgcolor="#CCCCCC" >
+
+<caption>Registration form</caption>
+
+<tr>
+
+<th >Enter your first name</th>
+
+<td><input type="text" name="fn" id="fn1" maxlength="10" title="enter your first name" placeholder="enter your first name" required/></td>
+
+</tr>
+
+<tr>
+
+<th>Enter your last name</th>
+
+<td><input type="text" name="ln"/></td>
+
+</tr>
+
+
+
+
+
+
+
+<tr>
+
+<th>Enter your email</th>
+
+<td><input name="email" type="email" required =" "/></td>
+
+</tr>
+
+<tr>
+
+<th>Enter your mobile</th>
+
+<td><input name="mobile"type="number" required=" "/></td>
+
+</tr>
+
+<tr>
+
+<!-- <th>Enter your colleage/campus name</th> -->
+
+<!-- <td><input type="text" name="campus"></input></td> -->
+
+</tr>
+
+<tr>
+
+<!-- <th>Select your gender</th> -->
+
+<!-- <td>
+
+male<input type="radio" name="g" value="m"/>
+female<input type="radio" name="g" value="f"/>
+
+</td> -->
+
+</tr>
+
+<tr>
+
+<th>Selected event</th>
+
+<td>
+
+{% for e in events %}
+
+<input name="event" type="text" placeholder={{ e.name }} disabled="disabled">
+
+{% endfor %}
+</td>
+
+</tr>
+
+<tr>
+
+<!-- <th>Select your DOB</th>
+
+<td><input type="date" name = "dob"/></td> -->
+
+</tr>
+
+
+
+
+
+
+
+
+</td>
+<td>
+<th><input name="submit" type="submit" placeholder={{ e.name }} disabled="disabled">
+</th>
+ <tr>
+</table>
+
+
+
+</form>
+
+
+
+<!-- position of footer -->
+
+
+{%  endblock %}
