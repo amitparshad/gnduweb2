@@ -12,11 +12,11 @@ def home(request):
     # print(events[0].image)
     # print(events)
     if request.method=="POST":
-        print(request.POST)
+      #  print(request.POST)
         u=request.POST.get("username")
         p=request.POST.get("password")
         user=authenticate(request,username=u,password=p)
-        print(user)
+       # print(user)
         if user is not None:
             login(request,user)
             messages.success(request, 'Welcome to TechFest '+ u )

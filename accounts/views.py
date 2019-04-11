@@ -25,7 +25,7 @@ def log_out(request):
 def log_in(request):
 
         if request.method=="POST":
-            print(request.POST)
+            #print(request.POST)
             u=request.POST.get("username")
             p=request.POST.get("password")
             user=authenticate(request,username=u,password=p)
@@ -56,7 +56,7 @@ def log_in(request):
 def studentform(request):
 
     if request.method == 'POST':
-        print(request.POST)
+        #print(request.POST)
         #print(request.POST.get("password2"))
         form = studentreg(request.POST)
             # name=request.POST.get('name'),

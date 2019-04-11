@@ -16,7 +16,7 @@ def eventf(request):
         events = event.objects.all()
         o=events[0].event_organisers
         student_already = student_registere_event.objects.filter(email=email)
-        print(student_already)
+        #print(student_already)
         return render(request,"events/event.html",{"events":events})
         
 
@@ -60,19 +60,19 @@ def enterevent(request,name):
         events = event.objects.filter(name = name)[0]
         #print("\n" +str(events))
         s = student_registere_event(email=email,event_name=events)
-        print(s,end="dd")
+       # print(s,end="dd")
         #ss=student_registere_event.objects.filter(email=s['email'],event_name=s['event_name'])
         ss=student_registere_event.objects.filter(email=email,event_name=events)
-        print(ss)
+       # print(ss)
 
         if(ss.count() == 0):
            s.save()
            c=0
 
-           print("\n data saved  ")
+         #  print("\n data saved  ")
         else:
             c=1
-            print("\n data not saved  ")
+          #  print("\n data not saved  ")
             #return render(request,"events/ticket.html",{"data":"you are already registered for" + name+" event"})    
        # print(s.email)
       #  print(s.event_name)
@@ -108,7 +108,7 @@ def eventreg(request):
 
 def eventdetail(request,name):
     detail = event.objects.filter(name=name) 
-    print(detail)
+   # print(detail)
     return render(request,'events/eventdetail.html',{'detail':detail})
 
 
@@ -129,6 +129,6 @@ def student_show(request,ename):
 
 def student_detail(request,id):
     stu_name = studentsignup.objects.filter(email_id=id)
-    print(stu_name)
+   # print(stu_name)
     return render(request,'events/show_stu.html',{'student_name':stu_name})
     
